@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    demo_job:
+      name: demo_job
+      tasks:
+        - task_key: demo_notebook
+          notebook_task:
+            notebook_path: ../bu1/for_sales.py
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
