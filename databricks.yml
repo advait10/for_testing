@@ -1,0 +1,29 @@
+bundle:
+  name: DAdemo
+git:
+  origin_url: https://github.com/advait10/for_testing.git
+ 
+
+include:
+  - src/*.yml
+  - src/env/*.yml
+  - resources/jobs/*.yml
+  - resources/pipelines/*.yml
+
+permissions:
+  - group_name: admins
+    level: CAN_MANAGE
+  - user_name: advaitpujari1@gmail.com
+    level: CAN_MANAGE
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-aaea5b99-3f14.cloud.databricks.com/browse?o=7474647052373993
+
+  qa:
+    default: false
+    workspace:
+      host: <qa workspace url>
